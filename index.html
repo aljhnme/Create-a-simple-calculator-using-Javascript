@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+   <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+ <div class="container my-4">
+ 	<hr class="mb-5">
+ 	<div class="calculator card">
+ 	 <input type="text" class="calculator-screen z-depth-1" id="p_num" value="" disabled />
+ 	 <div class="calculator-keys" style="background:#F0E785;">
+ 	 	
+ 	  <button type="button" class="operator btn btn-info" value="+" onclick="app_n_o('+')" >+</button>
+      <button type="button" class="operator btn btn-info" value="-" onclick="app_n_o('-')" >-</button>
+      <button type="button" class="operator btn btn-info" value="*" onclick="app_n_o('*')" >&times;</button>
+      <button type="button" class="operator btn btn-info" value="/" onclick="app_n_o('/')" >&divide;</button>
+
+      <button type="button" value="7" onclick="app_n_o('7')"  class="btn btn-light waves-effect">7</button>
+      <button type="button" value="8" onclick="app_n_o('8')"  class="btn btn-light waves-effect">8</button>
+      <button type="button" value="9" onclick="app_n_o('9')"  class="btn btn-light waves-effect">9</button>
+
+      <button type="button" value="4" onclick="app_n_o('4')"  class="btn btn-light waves-effect">4</button>
+      <button type="button" value="5" onclick="app_n_o('5')"  class="btn btn-light waves-effect">5</button>
+      <button type="button" value="6" onclick="app_n_o('6')"  class="btn btn-light waves-effect">6</button>
+
+
+      <button type="button" value="1" onclick="app_n_o('1')"  class="btn btn-light waves-effect">1</button>
+      <button type="button" value="2" onclick="app_n_o('2')"  class="btn btn-light waves-effect">2</button>
+      <button type="button" value="3" onclick="app_n_o('3')"  class="btn btn-light waves-effect">3</button>
+
+      <button type="button" value="0" onclick="app_n_o('0')" class="btn btn-light waves-effect">0</button>
+      <button type="button"  class="decimal function btn btn-secondary" value="."  onclick="app_n_o('.')">.</button>
+      <button type="button" onclick="Backspace()" class="all-clear function btn btn-danger btn-sm" value="all-clear"><i class="fas fa-backspace"></i></button>
+
+      <button type="button" class="equal-sign operator btn btn-default" onclick="equal_sign()" value="=">=</button>          
+ 	 </div>
+ 	</div>
+  </div>
+</body>
+<script type="text/javascript">
+	function app_n_o(result)
+	{
+       document.getElementById('p_num').value+=result;
+	}
+
+	function equal_sign()
+	{
+	  var result_a=document.getElementById('p_num').value;
+	  if (result_a != "") 
+	  {
+	  	document.getElementById('p_num').value=eval(result_a);
+	  }
+	}
+
+	function Backspace()
+	{
+		var result=document.getElementById('p_num').value;
+          
+         var Ba_sp_;
+         if (result.match(/^[0-9]+$/) == null) 
+         {
+           Ba_sp_=result.slice(0,-1);
+         }else{
+           Ba_sp_=result.slice(1);
+         }
+		document.getElementById('p_num').value=Ba_sp_;
+	}
+</script>
+</html>
