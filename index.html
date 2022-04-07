@@ -56,18 +56,11 @@
 	  }
 	}
 
-	function Backspace()
-	{
-		var result=document.getElementById('p_num').value;
-          
-         var Ba_sp_;
-         if (result.match(/^[0-9]+$/) == null) 
-         {
-           Ba_sp_=result.slice(0,-1);
-         }else{
-           Ba_sp_=result.slice(1);
-         }
-		document.getElementById('p_num').value=Ba_sp_;
-	}
+    function Backspace()
+    {
+    	var result=document.getElementById('p_num').value;
+
+    	document.getElementById('p_num').value=result.slice(0,-1);
+    }
 </script>
 </html>
